@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+  <header class="header">
+    <a href="#home" class="logo">Hager
+    <span>Tantawy</span></a>
+
+<!--    <i class='bx bx-menu' id="menue-icon"></i>-->
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="home" id="home">
+    <div class="home-content">
+      <h1>Hi, It's Me <span> Hager Ahmed </span> </h1>
+      <h3 class="text-animation"> I'm a<span></span></h3>
+      <p>Passionate about AI, Data Science, and Web Development.
+I love learning new technologies and turning ideas into real projects.</p>
+
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/hager-tantawy-99b987313/"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/hagerah2005"><i class='bx bxl-github'></i></a>
+        <a href="https://www.instagram.com/hagerahmed4077/"><i class='bx bxl-instagram-alt'></i></a>
+        <a href="mailto:hagerah5162@gmail.com"><i class='bx bx-envelope'></i></a>
+      </div>
+      <div class="btn-group">
+        <a href="#contact" class="btn">Hire</a>
+        <a href="files/Hager_CV_.pdf" download class="btn">Download CV</a>
+
+      </div>
+      </div>
+      <div class="home-img">
+        <img src="files/image.jpg" alt="profile" class="profile-img">
+
+      </div>
+
+  </section>
+  <section class="about" id="about">
+  <div class="about-content">
+    <h2 class="heading">About <span>Me</span></h2>
+    <p>
+      Motivated Computer Science student at Cairo University, passionate about Artificial Intelligence,
+      Machine Learning, and their applications in Data Science and Data Analysis.Experienced in developing projects using C++, Java, and Python, and building web apps with Django.
+      <span id="dots">...</span>
+      <span id="more">
+        My dream is to be the owner of the largest hospital equipped with AI-powered devices to treat
+        patients, especially those with malignant diseases, for free.
+      </span>
+    </p>
+    <button onclick="toggleRead()" id="readBtn" class="btn">Read More</button>
+  </div>
+
+  <div class="about-card">
+    <h3>Hager Ahmed Tantawy</h3>
+    <ul>
+      <li><strong>Age:</strong> 20</li>
+      <li><strong>Phone:</strong> +20 1101579042</li>
+      <li><strong>Address:</strong> Giza, Egypt</li>
+    </ul>
+  </div>
+</section>
+
+<section class="education" id="education">
+    <h2 class="heading">Education</h2>
+    <div class="timeline-items">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+                <div class="timeline-date">2021-2023</div>
+                <div class="timeline-content">
+                    <h3>High School</h3>
+                    <p> El Fadila Secondary School – Science Department
+                    Percentage: 88.23%
+                    Ranked 2nd in school and 27th in the educational administration. </p>
+                </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+                <div class="timeline-date">2023-2027</div>
+                <div class="timeline-content">
+                    <h3>University</h3>
+                    <p> I am currently a third-year student at the Faculty of Computers and Artificial Intelligence, Cairo University, in the AI department . My faculty is considered one of the strongest in Egypt in the field of Information Technology and Artificial Intelligence, combining both theoretical academic knowledge and practical application.I’ve learned a lot, applied my knowledge in real projects, and participated in competitions. </p>
+                </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+                <div class="timeline-date">May 2025- June 2025 </div>
+                <div class="timeline-content">
+                    <h3>Competitions</h3>
+                    <p> I participated in the Finology Competition organized by the Central Bank of Egypt from May to June 2025 as part of a team, where we developed "FinTrack," a personal finance app. </p>
+                </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+                <div class="timeline-date">Jul 2025 – Present </div>
+                <div class="timeline-content">
+                    <h3>Academies</h3>
+                    <p> I’m currently an AI trainee at Route Academy since July 2025, building foundations in Python, Data Science, and Machine Learning, including Deep Learning (Neural Networks, CNNs, RNNs), while developing real-world AI projects through hands-on practice and continuous learning. </p>
+                </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+                <div class="timeline-date">Jul 2025 – Aug 2025 </div>
+                <div class="timeline-content">
+                    <h3>Trainings</h3>
+                    <p> completed the HCIA–AI program at Huawei ICT Academy with a perfect score of 1000/1000, gaining strong foundations in Python, Data Science, and AI, and built and deployed Machine Learning and Deep Learning models. </p>
+                </div>
+        </div>
+    </div>
+</section>
+<section class="projects" id="projects">
+    <h2 class="heading">My <span>Projects</span></h2>
+
+    <div class="projects-container">
+    </div>
+
+    <!-- Project Details Modal -->
+    <div class="project-modal" id="projectModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeProjectDetails()">&times;</span>
+
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImg" src="" alt="Project Image">
+                </div>
+
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+
+                    <div class="technologies">
+                        <h3>Technologies Used</h3>
+                        <ul id="modalTechnologies"></ul>
+                    </div>
+
+                    <div class="project-links">
+                        <a id="demoLink" href="#" target="_blank" class="btn">Demo</a>
+                        <a id="githubLink" href="#" target="_blank" class="btn">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+  <section class="skills" id="skills">
+    <h2 class="heading">Skills & <span>Abilities</span></h2>
+
+    <div class="skills-container">
+        <div class="skills-main">
+            <!-- Technical Skills with Progress Bars -->
+            <div class="skills-category">
+                <h3>Technical Skills</h3>
+                <div class="skills-bars">
+                    <div class="skill-bar-item">
+                        <div class="skill-info">
+                            <span>Python</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-info">
+                            <span>c++</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-info">
+                            <span>HTMl</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-info">
+                            <span>CSS</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="92%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar-item">
+                        <div class="skill-info">
+                            <span>JavaScript</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Skills with Circles -->
+            <div class="skills-category">
+                <h3>Professional Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-circle">
+                        <div class="circle-progress" data-percent="90">
+                            <span class="progress-value">0%</span>
+                        </div>
+                        <p>Problem-Solving</p>
+                    </div>
+                    <div class="skill-circle">
+                        <div class="circle-progress" data-percent="85">
+                            <span class="progress-value">0%</span>
+                        </div>
+                        <p>Teamwork</p>
+                    </div>
+                    <div class="skill-circle">
+                        <div class="circle-progress" data-percent="80">
+                            <span class="progress-value">0%</span>
+                        </div>
+                        <p>Communication</p>
+                    </div>
+                    <div class="skill-circle">
+                        <div class="circle-progress" data-percent="85">
+                            <span class="progress-value">0%</span>
+                        </div>
+                        <p>Adaptability</p>
+                    </div>
+                    <div class="skill-circle">
+                        <div class="circle-progress" data-percent="87">
+                            <span class="progress-value">0%</span>
+                        </div>
+                        <p>Time Management</p>
+                    </div>
+                    <div class="skill-circle">
+                        <div class="circle-progress" data-percent="93">
+                            <span class="progress-value">0%</span>
+                        </div>
+                        <p>Self-Learning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Other Skills in Boxes -->
+        <div class="other-skills">
+            <div class="skills-box">
+                <div class="box-icon">
+                    <i class='bx bx-code-alt'></i>
+                </div>
+                <h3>Languages & Technologies</h3>
+                <ul>
+                    <li>C++</li>
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>AJAX</li>
+                    <li>Django</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+
+            <div class="skills-box">
+                <div class="box-icon">
+                    <i class='bx bx-briefcase-alt'></i>
+                </div>
+                <h3>Tools & Platforms</h3>
+                <ul>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                    <li>Microsoft SQL Server</li>
+                    <li>Excel</li>
+                    <li>Power BI</li>
+                    <li>Anaconda</li>
+                    <li>TensorFlow</li>
+                    <li>MindSpore</li>
+                </ul>
+            </div>
+
+            <div class="skills-box">
+                <div class="box-icon">
+                    <i class='bx bx-brain'></i>
+                </div>
+                <h3>Software Concepts</h3>
+                <ul>
+                    <li>SOLID Principles</li>
+                    <li>Design Patterns</li>
+                    <li>Software Analysis & Design</li>
+                    <li>Technical Writing</li>
+                </ul>
+            </div>
+
+          <div class="skills-box relevant-coursework">
+    <div class="box-icon">
+        <i class='bx bx-book'></i>
+    </div>
+    <h3>Relevant Coursework</h3>
+    <div class="coursework-grid">
+        <div class="coursework-column">
+            <ul>
+                <li>Structured Programming</li>
+                <li>OOP</li>
+                <li>Data Structures</li>
+                <li>Database</li>
+                <li>Software Engineering</li>
+                <li>Web Development</li>
+            </ul>
+        </div>
+        <div class="coursework-column">
+            <ul>
+                <li>Machine Learning</li>
+                <li>Algorithms</li>
+                <li>Operating System</li>
+                <li>Signals and System</li>
+                <li>Networks</li>
+            </ul>
+        </div>
+    </div>
+</div>
+     </div>
+    </div>
+</section>
+<section class="certificates" id="certificates">
+  <h2 class="heading">My <span>Certificates</span></h2>
+  <div class="cert-grid">
+
+    <div class="cert-card">
+      <img src="files/photo.png" alt="Certificate 1">
+        <p class="issuer">HCIA–AI</p>
+      <h3>HUAWEI ICT ACADEMY</h3>
+      <a href="files/HCIP_Certificates.pdf" target="_blank" class="btn" download>Download</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="files/img_2.png" alt="Certificate 2">
+        <p class="issuer"> Cisco Networking Academy</p>
+      <h3> Python Essentials 1</h3>
+      <a href="files/cisco.pdf" target="_blank" class="btn" download>Download</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="files/img_3.png" alt="Certificate 3">
+        <p class="issuer"> Mahara-Tech</p>
+      <h3> Database Fundamentals </h3>
+      <a href="files/Database.pdf" target="_blank" class="btn" download>Download</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="files/img_4.png" alt="Certificate 3">
+        <p class="issuer"> Mahara-Tech</p>
+      <h3> Mastering Object-Oriented Programming (OOP) using C++ </h3>
+      <a href="files/oop.pdf" target="_blank" class="btn" download>Download</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="files/img_5.png" alt="Certificate 3">
+        <p class="issuer"> Mahara-Tech</p>
+      <h3> The Principles of Writing Clean Code </h3>
+      <a href="files/clncode.pdf" target="_blank" class="btn" download>Download</a>
+    </div>
+
+      <div class="cert-card">
+      <img src="files/img_6.png" alt="Certificate 3">
+          <p class="issuer"> Mahara-Tech</p>
+      <h3> Learn HTML &CSS </h3>
+      <a href="files/css.pdf" target="_blank" class="btn" download>Download</a>
+    </div>
+
+      <div class="cert-card">
+      <img src="files/img_7.png" alt="Certificate 3">
+          <p class="issuer"> hp LIFE</p>
+      <h3> AI for Beginners </h3>
+      <a href="files/AI.pdf" target="_blank" class="btn" download>Download</a>
+    </div>
+
+      <div class="cert-card">
+      <img src="files/img_8.png" alt="Certificate 3">
+          <p class="issuer"> efe egypt</p>
+      <h3> Online Career Directions Program </h3>
+      <a href="files/img_8.png" target="_blank" class="btn" download>Download</a>
+    </div>
+  </div>
+</section>
+
+ <section class="contact" id="contact">
+     <h2 class="heading">Contact<span> Me</span></h2>
+     <form action="https://formspree.io/f/manbrpnq" method="POST">
+         <div class="input-group">
+             <div class="input-box">
+                 <input type="text"  name="name" placeholder="Full Name" required>
+                 <input type="email" name="email" placeholder="Email" required>
+             </div>
+             <div class="input-box">
+                 <input type="number" name="Phone" placeholder="Phone Number">
+                 <input type="text" name="Subject" placeholder="Subject" >
+             </div>
+         </div>
+         <div class="input-group-2">
+             <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+             <input type="submit" value="Send Message" class="btn">
+         </div>
+         <div id="formMessage" class="form-message"></div>
+     </form>
+ </section>
+  <footer class="footer">
+      <div class="social">
+         <a href="https://www.linkedin.com/in/hager-tantawy-99b987313/"><i class='bx bxl-linkedin'></i></a>
+        <a href="https://github.com/hagerah2005"><i class='bx bxl-github'></i></a>
+        <a href="https://www.instagram.com/hagerahmed4077/"><i class='bx bxl-instagram-alt'></i></a>
+        <a href="mailto:hagerah5162@gmail.com"><i class='bx bx-envelope'></i></a>
+      </div>
+      <ul class="list">
+
+          <li>
+              <a href="#about">About Me</a>
+          </li>
+          <li>
+              <a href="#skills"> Skills</a>
+          </li>
+          <li>
+              <a href="#contact"> Contact</a>
+          </li>
+          <li>
+              <a href="#projects">Projects</a>
+          </li>
+      </ul>
+      <p class="copyright">
+          © 2025 Hager Tantawy | All Rights Reserved
+      </p>
+      <p class="copyright">
+          Crafted with 💖 using HTML, CSS & JS
+      </p>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
